@@ -12,6 +12,7 @@ class BinarySearchTree {
       this.head = null;
     } else {
       this.head = new Node();
+      this.value = this.head;
     }
   }
   root() {
@@ -19,7 +20,10 @@ class BinarySearchTree {
   }
 
   add(data) {
-    
+    if(data > this.value){
+      this.value.right = data;
+    } else this.value.left = data;
+    return this;
   }
 
   has(/* data */) {
